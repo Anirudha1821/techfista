@@ -70,6 +70,15 @@ def calculate_engagement_score(medicationDuration, stepsWalked, caloriesBurned, 
     wateravg = average(waterArray)    
     caloriesavg = average(caloriesArray)    
     medicationsavg = average(mdedicationArray)    
-
+    for e in stepsArray:
+        print(e)
+    for e in sleepArray:
+        print(e)
+    for e in waterArray:
+        print(e)
+    for e in caloriesArray:
+        print(e)
+    for e in mdedicationArray:
+        print(e)
     engagementScore = ((stepsavg + sleepavg + wateravg + caloriesavg+medicationsavg) / 5) * 10
     return engagementScore
