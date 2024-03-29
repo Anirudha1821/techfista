@@ -9,17 +9,16 @@ async def main():
         stepsArray = [5000, 6000, 7000, 8000, 9000]
         sleepArray = [6, 7, 8, 7, 6]  
         waterArray = [2, 3, 2, 3, 2]  
-        medicineArray = [2, 3, 2, 3, 2]  
+        medicineArray = [True, True, False, True, False]  
         caloriesArray = [2000, 2200, 2100, 2300, 2200]
         
         stepthreshold = 3000
         sleepthreshold = 8
         watersthreshold = 5
-        medicinethreshold = 5
         caloriessthreshold = 3000
         
         score = calculate_engagement_score(medicineArray, stepsArray, caloriesArray, sleepArray, waterArray, 
-                                           stepthreshold, sleepthreshold, watersthreshold, caloriessthreshold,medicinethreshold)
+                                           stepthreshold, sleepthreshold, watersthreshold, caloriessthreshold)
         
         return {"engagement_score": score}
     

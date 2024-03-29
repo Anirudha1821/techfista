@@ -4,7 +4,7 @@ def average(arr):
     return sum(arr) / len(arr)
 
 def calculate_engagement_score(medicationDuration, stepsWalked, caloriesBurned, sleepDuration, waterIntake, 
-                               step, calories, sleep, water,medication):
+                               step, calories, sleep, water):
     stepsArray = []
     sleepArray = []
     waterArray = []
@@ -13,14 +13,23 @@ def calculate_engagement_score(medicationDuration, stepsWalked, caloriesBurned, 
     
     n = len(stepsWalked)
     cnt=0
-    score=1
+    score=0
     for i in range(n):
         if(cnt<7):
             cnt=1
-            mdedicationArray.append(score)
-            if(not(medicationDuration[i])):
-                score=score/2
+            temp=(score/7)
+            mdedicationArray.append(temp)
+            score=0
+            if(medicationDuration[i]):
+                score=score+1
+            else:
+                score=score
+                
         else:
+            if(medicationDuration[i]):
+                score=score+1
+            else:
+                score=score
             cnt=cnt+1
                 
             
@@ -60,6 +69,7 @@ def calculate_engagement_score(medicationDuration, stepsWalked, caloriesBurned, 
     sleepavg = average(sleepArray)    
     wateravg = average(waterArray)    
     caloriesavg = average(caloriesArray)    
+    medicationsavg = average(mdedicationArray)    
 
-    engagementScore = ((stepsavg + sleepavg + wateravg + caloriesavg) / 4) * 10
+    engagementScore = ((stepsavg + sleepavg + wateravg + caloriesavg+medicationsavg) / 5) * 10
     return engagementScore
