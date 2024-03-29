@@ -6,10 +6,10 @@ app = FastAPI()
 
 @app.post("/generate_engagement_score")
 async def main(
+    medicineArray: List[bool], 
     stepsArray: List[int], 
     sleepArray: List[int], 
     waterArray: List[int], 
-    medicineArray: List[bool], 
     caloriesArray: List[int],
     stepthreshold: int, 
     sleepthreshold: int, 
