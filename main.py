@@ -4,7 +4,7 @@ from typing import List
 
 app = FastAPI()
 
-@app.get("/generate_engagement_score")
+@app.post("/generate_engagement_score")
 async def main(
     stepsArray: List[int], 
     sleepArray: List[int], 
