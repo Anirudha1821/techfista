@@ -3,7 +3,7 @@ from model import *
 
 app = FastAPI()
 
-@app.get("/genrate_engagement_score")
+@app.get("/generate_engagement_score")
 async def main():
     try:
         stepsArray = [5000, 6000, 7000, 8000, 9000]
@@ -18,8 +18,8 @@ async def main():
         medicinethreshold = 5
         caloriessthreshold = 3000
         
-        score = calculate_engagement_score(medicineArray,stepsArray, caloriesArray, sleepArray, waterArray, 
-                                           stepthreshold, sleepthreshold, watersthreshold, caloriessthreshold)
+        score = calculate_engagement_score(medicineArray, stepsArray, caloriesArray, sleepArray, waterArray, 
+                                           stepthreshold, sleepthreshold, watersthreshold, caloriessthreshold,medicinethreshold)
         
         return {"engagement_score": score}
     
