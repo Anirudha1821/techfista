@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from model import *
+from typing import List
 
 app = FastAPI()
 
@@ -32,7 +33,6 @@ async def main(
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, port=8000, debug=True)
