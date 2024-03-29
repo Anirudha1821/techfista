@@ -4,7 +4,7 @@ def average(arr):
     return sum(arr) / len(arr)
 
 def calculate_engagement_score(medicationDuration, stepsWalked, caloriesBurned, sleepDuration, waterIntake, 
-                               step, calories, sleep, water):
+                               step, sleep, water,calories):
     stepsArray = []
     sleepArray = []
     waterArray = []
